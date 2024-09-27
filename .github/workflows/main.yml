@@ -1,0 +1,19 @@
+name: CI pipline
+ 
+on:
+    pull_request:
+    branches: [main]
+ 
+    jobs:
+    execute:
+    run-on: ubuntu-latest
+ 
+    steps:
+    - name: checkout code
+    uses: actions/checkout@v4.2.0
+    
+    - name: setup python
+    uses: actions/setup-python@v5.2.0
+    
+     - name: Run python app
+     run: python app.py
